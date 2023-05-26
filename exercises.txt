@@ -4,7 +4,7 @@ customersDF_name_split = customersDF.withColumn('name',split(customersDF.name,' 
                                  )
 display(customersDF_name_split)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #SPLITING CUSTOMER NAME COLUMN INTO ARRAY, SEPARATOR COMMA
 
@@ -12,14 +12,14 @@ customersDF_name_split = customersDF.withColumn('name',split(customersDF.name,',
                                  )
 display(customersDF_name_split)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #SPLIT CUSTOMER ADRESS COLUMN INTO ARRAY
 
 customersDF_adress_split = customersDF_name_split.withColumn('adress',split(customersDF.adress,','))
 display(customersDF_adress_split)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # CUSTOMER DF WITH SEPARATED COLUMNS FOR ADDRESS & NAME
 
@@ -33,7 +33,7 @@ customersDF_updated = customersDF_adress_split.select(
                                   customersDF_adress_split.adress.getItem(3).alias('Postcode'))
 display(customersDF_updated)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # JOINING CUSTOMERS & ORDERS & PRODUCT DF
 
@@ -43,7 +43,7 @@ ordersDF_customersDF_productDF_join = ordersDF_customersDF_join.join(productsDF,
 
 display(ordersDF_customersDF_productDF_join)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # FIXING THE DATE FORMAT FOR DATEOFDELIVERY COLUMN
 
@@ -51,7 +51,7 @@ ordersDF_customersDF_productDF_join.withColumn('dateofdelivery',to_date(col('dat
 
 ordersDF_customersDF_productDF_join.printSchema()
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # FIND WHICH PRODUCTS ARE ORDERED THE MOST & WHICH THE LEAST
 
@@ -59,14 +59,14 @@ ordersDF_customersDF_productDF_join.groupBy('productid').count().withColumnRenam
 
 ordersDF_customersDF_productDF_join.select('name',productsDF.id).show()
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # DISPLAY CUSTOMERS WITH MORE THAN 1 ORDER
 final_df.groupBy('FirstName').count().withColumnRenamed('count','orders').where('orders > 1').show()
 
 display(final_df)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#S----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # CUSTOMERS THAT HAVE NOT PLACED ANY ORDERS
 client_no_order = customersDF_updated.join(ordersDF,customersDF_updated.id==ordersDF.custid,'left')
