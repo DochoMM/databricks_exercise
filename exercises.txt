@@ -72,3 +72,5 @@ display(final_df)
 client_no_order = customersDF_updated.join(ordersDF,customersDF_updated.id==ordersDF.custid,'left')
 
 client_no_order.select('FirstName','FamilyName').where('productid is Null').show()
+
+#adding an additional comment for merge conflict testing/adding more 
