@@ -1,2 +1,3 @@
 # databricks_exercise
-training
+
+# This is a project with the purpose of executing given exercises on the Databricks platform
