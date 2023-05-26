@@ -1,0 +1,30 @@
+# Creating schema for ordersDF
+
+order_schema = StructType([
+    StructField('id',IntegerType(),False),
+    StructField('custid',IntegerType(),False),
+    StructField('productid',IntegerType(),False),
+    StructField('quantity',IntegerType(),True),
+    StructField('deliveryadress',StringType(),True),
+    StructField('dateofdelivery',StringType(),True)
+])
+
+# Creating schema for productsDF
+
+product_schema = StructType([
+    StructField('id',IntegerType(),False),
+    StructField('name',StringType(),True),
+    StructField('product quantity',StringType(),True),
+    StructField('price',FloatType(),True),
+    StructField('date created',StringType(),True)
+])
+
+# Creating schema for products DF
+
+customer_schema = StructType([
+    StructField('id',IntegerType(),False),
+    StructField('name',StringType(),True),
+    StructField('adress',StringType(),True),
+    StructField('country',StringType(),True),
+    StructField('date registered',StringType(),True)
+])
