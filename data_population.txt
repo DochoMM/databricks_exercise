@@ -1,0 +1,32 @@
+# Creating data for productsDF
+
+product_data = [(11,'Chocolate','500g',1.50,'2022-10-06'),
+                (12,'Peanut Butter','300g',2.25,'2021-05-06'),
+                (13,'OrangeSmoothie','500ml',9.75,'2012-03-11'),
+                (14,'Biscuits','100g',3.33,'2023-12-02'),
+                (15,'JuiceApple','250ml',1.25,'2020-12-12')
+                ]
+
+
+# Creating data for customersDF
+
+customer_data = [(1,'Docho Minev','Ruse,Aleksandrovksa,97,7002','Bulgaria','2022-12-18'),
+                 (2,'Kiril Loev','Bqla,Opalchenska,1a,6930','Bulgaria','2020-05-06'),
+                 (3,'Natasha Taneva','Plovdiv,Sveta,15,4500','Bulgaria','2018-12-11'),
+                 (4,'Alex Velikov','Prague,Chemitka,8b,1515','Czhech','2021-01-02'),
+                 (5,'Velikov Tanev','Sofia,Mladost,3,9520','Bulgaria','2015-06-03'),
+                 (6,'Lisa Moneva','Sofia,Mladost,5,9520','Bulgaria','2010-10-12'),
+                 (7,'Toncho Risev','Marten,Hidroskop,3,3990','Bulgaria','2020-05-19'),
+                 (8,'Aleksiev Doven','Stara Zagora,Novidom,5,4002','Bulgaria','2020-03-20')
+                 ]
+
+
+# Creating data for ordersDF
+
+order_data = [(21,1,11,3,'Bulgaria,Ruse,Aleksandrovksa,97,7002','05-11-2022'),
+               (22,1,13,7,'Bulgaria,Ruse,Aleksandrovksa,97,7002','05-12-2022'),
+               (23,3,15,1,'Bulgaria,Plovdiv,Sveta,15,4500','03-10-2021'),
+               (24,8,13,5,'Bulgaria,Haskovo,Nikoches,12,4500','03-10-2012'),
+               (25,5,14,3,'Bulgaria,Sofia,Mladost,5,9520','12-06-2021'),
+               (26,4,11,2,'Czhech,Prague.Chemitka,8b,1515','11-05-2022'),
+               ]
